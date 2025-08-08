@@ -22,7 +22,8 @@
 }
 
 .card {
-  display: inline-block;
+  width: 200px;
+  height: 200px;
   background-color: #1a1a1a;
   border-radius: 20px;
   font-size: 1.5rem;
@@ -30,6 +31,11 @@
   cursor: pointer;
   filter: drop-shadow(0 0 1px grey);
   transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
 
 }
 
@@ -48,7 +54,8 @@
 
 .counter {
   font-size: 4rem;
-  margin: auto 2rem;
+  line-height: 2rem;
+  /* margin: auto 2rem; */
   box-sizing: border-box;
 }
 
