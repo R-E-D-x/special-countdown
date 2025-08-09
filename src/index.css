@@ -134,4 +134,10 @@ button:focus-visible {
     grid-template: 1fr 1fr 1fr / 1fr 1fr;
     width: 100%;
   }
+
+  .card {
+    width: 130px;
+    height: 130px;
+    font-size: 1rem;
+  }
 }
