@@ -32,7 +32,8 @@ function App() {
 	return (
 		<>
 			<div className="container">
-				<h1>Time Left</h1>
+				<h1>Serving in the military</h1>
+				<h2>Time Left:</h2>
 				<div className="cards">
 					<Card stamp={"Years"}>{yearsLeft}</Card>
 					<Card stamp={"Months"}>{monthsLeft}</Card>
