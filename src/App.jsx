@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./Components/Card";
+import Copyright from "./Components/Icons/Copyright";
+import Discord from "./Components/Icons/Discord";
+import Github from "./Components/Icons/Github";
+import Instagram from "./Components/Icons/Instagram";
+import Mail from "./Components/Icons/Mail";
+import Spotify from "./Components/Icons/Spotify";
+import Steam from "./Components/Icons/Steam";
 
 function App() {
 	const [timeLeft, setTimeLeft] = useState(
@@ -24,15 +31,38 @@ function App() {
 	} = timeLeft;
 	return (
 		<>
-			<div>
+			<div className="container">
 				<h1>Time Left</h1>
-				<div className="body">
+				<div className="cards">
 					<Card stamp={"Years"}>{yearsLeft}</Card>
 					<Card stamp={"Months"}>{monthsLeft}</Card>
 					<Card stamp={"Days"}>{daysLeft}</Card>
 					<Card stamp={"Hours"}>{hoursLeft}</Card>
 					<Card stamp={"Minutes"}>{minutesLeft}</Card>
 					<Card stamp={"Seconds"}>{secondsLeft}</Card>
+				</div>
+				<div className="contacts">
+					<div>
+						<a
+							target="_blank"
+							href="https://discord.com/users/645874622927208448"
+						>
+							<Discord />
+						</a>
+						<a target="_blank" href="https://www.instagram.com/ahmed_mousa_1/">
+							<Instagram />
+						</a>
+						<a target="_blank" href="https://github.com/R-E-D-x">
+							<Github />
+						</a>
+						<a target="_blank" href="mailto:cubyvilly6@gmail.com">
+							<Mail />
+						</a>
+					</div>
+					<div className="copyright">
+						<Copyright />
+						<span>Copyrights Reserved, RED 2025.</span>
+					</div>
 				</div>
 			</div>
 		</>

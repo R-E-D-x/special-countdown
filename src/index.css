@@ -14,7 +14,7 @@
 
 }
 
-.body {
+.cards {
   display: grid;
   gap: 0.5rem;
   grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -37,6 +37,42 @@
   gap: 1rem;
   align-items: center;
 
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bi {
+  height: 35px;
+  width: 35px;
+  margin: 0.5rem;
+  transition: all 0.3s;
+}
+
+.bi:hover {
+  transform: translateY(-4px);
+}
+
+.bi-github {
+  fill: white;
+}
+
+.bi-instagram {
+  fill: red;
+}
+
+.bi-c-circle {
+  width: 15px;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -119,7 +155,7 @@ button:focus-visible {
 }
 
 @media (max-width:1468px) {
-  .body {
+  .cards {
     display: grid;
     gap: 0.5rem;
     grid-template: 1fr 1fr / 1fr 1fr 1fr;
@@ -128,7 +164,7 @@ button:focus-visible {
 }
 
 @media (max-width:800px) {
-  .body {
+  .cards {
     display: grid;
     gap: 0.5rem;
     grid-template: 1fr 1fr 1fr / 1fr 1fr;
