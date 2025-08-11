@@ -1,8 +1,8 @@
 function Card({ children, stamp }) {
 	return (
 		<div className="card">
-			<div className="stamp">{stamp}</div>
-			<div className="counter">{children}</div>
+			<div className="stamp no-select">{stamp}</div>
+			<div className="counter no-select">{children}</div>
 		</div>
 	);
 }

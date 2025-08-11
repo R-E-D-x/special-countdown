@@ -14,11 +14,21 @@
 
 }
 
+h1,
+h2,
+h3,
+h4,
+span,
+.no-select {
+  user-select: none;
+}
+
 .cards {
   display: grid;
   gap: 0.5rem;
   grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
   place-items: center;
+  width: fit-content;
 
 }
 
@@ -42,9 +52,91 @@
 
 .container {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  background-color: #00000080;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.popup {
+  border-radius: 20px;
+  background-color: #1a1a1a;
+  position: relative;
+  height: 50%;
+  min-width: 50%;
+  box-sizing: border-box;
+  padding: 55px 10px;
+  border: 1px solid #f9f9f950;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+input {
+  font-size: 1.25rem;
+  box-sizing: border-box;
+  padding: 5px 15px;
+}
+
+textarea {
+  font-size: 1.25rem;
+  resize: vertical;
+  width: 350px;
+  height: 2.5rem;
+  border-radius: 15px 15px 0 15px;
+  padding: 5px 15px;
+  max-height: 70px;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+input[type=text] {
+  height: 2rem;
+  width: 350px;
+  border-radius: 30px;
+}
+
+textarea,
+input {
+  border: none;
+  box-sizing: border-box;
+}
+
+
+textarea:focus,
+textarea:focus-visible,
+input:focus,
+input:focus-visible {
+  outline: 1px solid #535bf2;
+}
+
+form button {
+  background-color: #2b2b2b;
 }
 
 .bi {
@@ -171,7 +263,7 @@ button:focus-visible {
     display: grid;
     gap: 0.5rem;
     grid-template: 1fr 1fr / 1fr 1fr 1fr;
-    width: 100%;
+
   }
 }
 
@@ -180,7 +272,7 @@ button:focus-visible {
     display: grid;
     gap: 0.5rem;
     grid-template: 1fr 1fr 1fr / 1fr 1fr;
-    width: 100%;
+    place-content: center;
   }
 
   .card {
