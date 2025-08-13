@@ -1,6 +1,5 @@
 import "./App.css";
 import Copyright from "./Components/Icons/Copyright";
-
 import Cards from "./Components/Cards";
 import Contacts from "./Components/Contacts";
 import { useState } from "react";

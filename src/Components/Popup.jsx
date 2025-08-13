@@ -51,7 +51,9 @@ function Popup({ setPopup }) {
 						>
 							Cancel
 						</button>
-						<button type="submit">{isLoading ? "Loading..." : state}</button>
+						<button type="submit" disabled={state !== "Submit" || isLoading}>
+							{isLoading ? "Loading..." : state}
+						</button>
 					</div>
 				</form>
 			</div>
