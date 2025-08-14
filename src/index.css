@@ -92,6 +92,21 @@ span,
   align-items: center;
 }
 
+.popup-message {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  position: absolute;
+  background-color: #2b2b2b;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #ffffff70;
+  min-height: 30%;
+}
+
+
 input {
   font-size: 1.25rem;
   box-sizing: border-box;

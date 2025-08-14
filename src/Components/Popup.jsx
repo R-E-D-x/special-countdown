@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import addEmail from "../util/addEmail";
 
 function Popup({ setPopup }) {
@@ -6,12 +6,39 @@ function Popup({ setPopup }) {
 	const [content, setContent] = useState("");
 	const [isLoading, setLoading] = useState(false);
 	const [state, setState] = useState("Submit");
+	const [message, setMessage] = useState("");
+	const [showMessage, setShowMessage] = useState(false);
+	useEffect(() => {
+		setMessage(() => {
+			if (state === "Done! ✅") return "Your message has been submitted! ✅";
+			else return "something went wrong! ❌";
+		});
+	}, [state]);
 	return (
-		<div className="popup-container" onClick={() => setPopup(false)}>
+		<div
+			className="popup-container"
+			onClick={() => {
+				setPopup(false);
+				setState("Submit");
+				setShowMessage(false);
+			}}
+		>
+			{showMessage && (
+				<div className="popup-message">
+					<h2>{message}</h2>
+					<button
+						onClick={(e) => {
+							if (state !== "Done! ✅") e.stopPropagation();
+							setState("Submit");
+							setShowMessage(false);
+						}}
+					>
+						Ok
+					</button>
+				</div>
+			)}
 			<div className="popup" onClick={(e) => e.stopPropagation()}>
-				{state === "Submit" && <h3>Send me a message</h3>}
-				{state === "Done! ✅" && <h3>Message Sent✅</h3>}
-				{state === "Error ❌" && <h3>Somthing went wrong🥲</h3>}
+				<h3>Send me a message</h3>
 				<form
 					onSubmit={async (e) => {
 						e.preventDefault();
@@ -19,9 +46,7 @@ function Popup({ setPopup }) {
 						const result = await addEmail(name, content);
 						setLoading(false);
 						setState(result ? "Done! ✅" : "Error ❌");
-						setTimeout(() => {
-							setState("Submit");
-						}, 2000);
+						setShowMessage(true);
 					}}
 					action="post"
 					className="popup-form"
@@ -32,6 +57,7 @@ function Popup({ setPopup }) {
 						type="text"
 						name="name"
 						placeholder="Your name (optional)"
+						required={true}
 					/>
 					<textarea
 						value={content}
