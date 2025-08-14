@@ -6,7 +6,7 @@ function Cards() {
 	);
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setTimeLeft(getTimeBreakdown(new Date("2027-06-01") - new Date()));
+			setTimeLeft(getTimeBreakdown(new Date("2027-04-01") - new Date()));
 		}, 1000);
 
 		return () => clearInterval(interval); // cleanup
