@@ -56,8 +56,8 @@ function Popup({ setPopup }) {
 						onChange={(e) => setName(e.target.value)}
 						type="text"
 						name="name"
-						placeholder="Your name (optional)"
-						required={true}
+						placeholder="Your name"
+						required
 					/>
 					<textarea
 						value={content}
